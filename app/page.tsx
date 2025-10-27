@@ -9,28 +9,28 @@ const sections = [
   {
     id: 1,
     title: 'We Are All Oranges',
-    text: 'Walking in a grey world, step by step, day by day',
+    text: 'Grey skies overhead\nYet we walk, step after step\nTogether, we breathe',
     color: '#FBF8EF',
     textColor: '#666666',
   },
   {
     id: 2,
     title: 'A Brighter Dawn',
-    text: 'The warmth begins to spread, little joys in every corner',
+    text: 'Soft morning whispers\nWarmth spreads through weathered branches\nSmall joys start to bloom',
     color: '#80CBC4',
     textColor: '#2C5F5A',
   },
   {
     id: 3,
     title: 'Blooming Days',
-    text: 'Laughter echoes, hearts lighter, moments sweeter',
+    text: 'Laughter like sunshine\nHearts dance lighter than before\nSweet moments linger',
     color: '#B4EBE6',
     textColor: '#1A6B63',
   },
   {
     id: 4,
     title: 'Golden Tomorrow',
-    text: 'A future where everyone walks freely, glowing with peace',
+    text: 'Golden paths unfold\nEvery soul walks free and bright\nPeace glows from within',
     color: '#FFB433',
     textColor: '#8B5A00',
   },
@@ -103,12 +103,13 @@ export default function Home() {
                     {section.title}
                   </h1>
                   <p
-                    className="font-serif italic"
+                    className="font-serif italic whitespace-pre-line"
                     style={{
                       fontSize: 'clamp(1rem, 2vw, 1.5rem)',
                       color: section.textColor,
                       opacity: 0.8,
                       fontWeight: 300,
+                      lineHeight: 1.8,
                     }}
                   >
                     {section.text}
