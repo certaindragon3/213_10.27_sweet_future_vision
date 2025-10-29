@@ -56,7 +56,7 @@ export default function Home() {
   });
 
   // 背景色渐变
-  // 0-20%: 第1页, 20-40%: 第2页, 40-60%: 第3页, 60-80%: 第4页, 80-100%: Designer's Note
+  // 0-20%: 第1页, 20-40%: 第2页, 40-60%: 第3页, 60-80%: 第4页, 80-100%: Designer&apos;s Note
   const backgroundColor = useTransform(
     scrollXProgress,
     [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.85, 1],
@@ -71,14 +71,14 @@ export default function Home() {
       sections[3].color,  // 70%: 第4页中心
       sections[3].color,  // 80%: 保持第4页颜色
       '#FFFFFF',          // 85%: 开始渐变到白色
-      '#FFFFFF'           // 100%: Designer's Note纯白
+      '#FFFFFF'           // 100%: Designer&apos;s Note纯白
     ]
   );
 
   // Lottie和其他元素的透明度（在80%后开始淡出）
   const elementsOpacity = useTransform(scrollXProgress, [0.75, 0.9], [1, 0]);
 
-  // Designer's Note的透明度（在85%后开始淡入）
+  // Designer&apos;s Note的透明度（在85%后开始淡入）
   const noteOpacity = useTransform(scrollXProgress, [0.85, 0.95], [0, 1]);
 
   // 滚动提示的透明度（基于elementsOpacity计算）
@@ -90,7 +90,7 @@ export default function Home() {
       wrapper: containerRef.current!,
       orientation: 'horizontal',
       smoothWheel: true,
-      smoothTouch: true,
+      syncTouch: true,
       duration: 1.5,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       lerp: 0.1,
@@ -175,7 +175,7 @@ export default function Home() {
             </motion.div>
           ))}
 
-          {/* Designer's Note - 第5个独立页面 */}
+          {/* Designer&apos;s Note - 第5个独立页面 */}
           <div className="flex-shrink-0 w-screen h-full relative flex items-center justify-center px-16">
             <motion.div
               className="max-w-3xl"
@@ -190,7 +190,7 @@ export default function Home() {
                   letterSpacing: '0.08em',
                 }}
               >
-                Designer's Note
+                Designer&apos;s Note
               </h2>
               <div
                 className="font-serif whitespace-pre-line text-left leading-relaxed"
